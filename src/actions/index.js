@@ -3,7 +3,9 @@ export const actions = {
     EQUAL:"EQUAL",
     MS:"MEM_SAVE",
     MC:"MEM_CLEAR",
-    MR:"MEM_RETRIEVE"
+    MR:"MEM_RETRIEVE",
+    AC:"ALL_CLEAR",
+    C:"CLEAR",
 
 };
 
@@ -14,31 +16,36 @@ export function addSymbol(key) {
     };
 }
 
-export function memorySave(result) {
+export function memorySave() {
     return {
         type: actions.MS,
-        result: result,
     };
 }
 
-export function memoryClear(RESULT) {
+export function memoryClear() {
     return {
         type: actions.MC,
-        result: result,
     };
 }
 
 export function memoryRetrieve() {
     return {
         type: actions.MR,
-        result: result,
     };
 }
 
-export function equalSymbol(int1, int2) {
+export function equalSymbol() {
     return {
         type: actions.EQUAL,
-        int1: int1,
-        int2: int2
+    };
+}
+export function allClear() {
+    return {
+        type: actions.AC,
+    };
+}
+export function clear() {
+    return {
+        type: actions.C,
     };
 }
