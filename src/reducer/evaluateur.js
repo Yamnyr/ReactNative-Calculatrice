@@ -8,7 +8,7 @@ export default function evaluateur(expression) {
     let regOperator = '([%/+-x])';
     let exprValide = new RegExp('^$|^' + regNumber + '(' + regOperator + regNumber + ')*$');
 
-    if (!exprValide.test(expression)) throw new ExceptionExpressionInvalide('Expression [' + expression + '] invalide');
+    if (!exprValide.test(expression)) throw new ExceptionExpressionInvalide('Expression.js [' + expression + '] invalide');
 
     // eslint-disable-next-line
     let m = /x/g;
