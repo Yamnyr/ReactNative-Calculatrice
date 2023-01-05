@@ -1,5 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
+import {useContext} from "react";
+import {Context} from "../context";
 export default function Memory() {
+    const state = useContext(Context);
     return (
         <View style={styles.Memory}>
             <thead style={{marginTop:'10px'}}>

@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
-export default function Title(Title) {
+export default function Title(props) {
     return (
         <View style={styles.Title}>
-            <Text style={styles.title}>Ma Calculatrice</Text>
+            <Text style={styles.title}>{props.Title}</Text>
         </View>
     )
 }

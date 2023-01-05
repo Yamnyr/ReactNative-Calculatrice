@@ -1,13 +1,15 @@
 import {actions} from '../actions';
 import evaluateur from "./evaluateur";
 
-export function reducer(state = defaultState, action) {
+export const defaultState = {
+    expression:"",
+    memory: 0,
+};
 
-    const defaultState = {
-        expression:0,
-        memory: 0,
-    };
 
+export function reducer(state, action) {
+
+console.log("reducer", action)
     switch (action.type) {
         case actions.ADD_SYMBOL:
             return {...state, expression: state.expression + action.key };
@@ -22,7 +24,7 @@ export function reducer(state = defaultState, action) {
             return {expression : state.memory};
 
         case actions.AC:
-            return {expression:0};
+            return {expression: ""};
 
         case actions.C:
             return {expression: state.expression.slice(0, -1)};

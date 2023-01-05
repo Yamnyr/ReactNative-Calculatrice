@@ -1,9 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import {useContext} from "react";
+import {Context} from "../context";
 export default function Expression() {
+    const { state } = useContext(Context);
     return (
         <View style={styles.Expression}>
-            <Text style={styles.expression}>Ma Calculatrice</Text>
+            <Text style={styles.expression}>{state.expression}</Text>
         </View>
     )
 }

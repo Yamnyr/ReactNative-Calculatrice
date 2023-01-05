@@ -1,16 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Keyboard from "./Keyboard";
 export default function Key(props) {
     return (
         <View>
-            <button style={styles.button}>{props.texte}</button>
+            <TouchableOpacity
+                onPress={props.onPress}
+                style={styles.button}
+            >
+                <Text>{props.texte}</Text>
+            </TouchableOpacity>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     button: {
-        width:'32vw',
-        height:'5vh'
+        alignItems: "center",
+        backgroundColor: "#DDDDDD",
+        padding: 10,
+        width: '32vw'
     },
 });
