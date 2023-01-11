@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     expression:{
         margin: 10,
         color:'gray',
-        fontSize:20
+        fontSize:20,
+        height:20
     }
 });

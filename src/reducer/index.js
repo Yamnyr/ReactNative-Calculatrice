@@ -30,7 +30,7 @@ console.log("reducer", action)
             return {expression: state.expression.slice(0, -1)};
 
         case actions.EQUAL:
-            return {expression: evaluateur(state)};
+            return {expression: evaluateur(state.expression)};
 
         default:
             return state;

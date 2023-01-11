@@ -1,25 +1,28 @@
 import { StyleSheet, Text, View } from 'react-native';
 import {useContext} from "react";
 import {Context} from "../context";
+import {addSymbol, memoryClear, memoryRetrieve, memorySave} from "../actions";
+import Key from "./Key";
 export default function Memory() {
     const state = useContext(Context);
+    const { dispatch } = useContext(Context);
     return (
-        <View style={styles.Memory}>
-            <thead style={{marginTop:'10px'}}>
-            <tr>
-                <td><button style={styles.button}>MS</button></td><td><button style={styles.button}>mc</button></td><td><button style={styles.button}>mr</button></td>
-            </tr>
-            </thead>
+        <View style={styles.ligne}>
+
+                    <Key texte="MS" onPress={() => dispatch(memorySave())} />
+
+                    <Key texte="MC" onPress={() => dispatch(memoryClear())} />
+
+                    <Key disabled={!state.memory} texte="MR" onPress={() => dispatch(memoryRetrieve())} ></Key>
+
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    Memory: {
-        textAlign: 'center',
-    },
-    button: {
-        width:'32vw',
-        height:'5vh'
+    ligne: {
+        flexDirection:"row",
+        flexWrap:'wrap',
+        margin:'1.5vw'
     },
 });
